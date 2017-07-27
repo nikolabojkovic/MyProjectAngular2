@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../models/hero';
 import { Headers , Http } from '@angular/http';
+import { API_URL } from '../env';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class HeroService {
 
-    //private heroesUrl = 'api/heroes'; // Url to web api
-    private heroesUrl = 'http://myprojectdotnet.somee.com/api/heroes';
+    private heroesUrl = `${API_URL}api/heroes`;
     private headers = new Headers();
 
 

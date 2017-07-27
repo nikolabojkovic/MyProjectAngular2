@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Hero } from '../models/hero';
+import { API_URL } from '../env';
 
 @Injectable()
 export class HeroSearchService {
@@ -12,7 +13,7 @@ export class HeroSearchService {
     constructor(private http: Http) {}
 
     search(term: string): Observable<Hero[]> {
-        return this.http.get(`http://localhost:4566/api/heroes?name=${term}`)
+        return this.http.get(`${API_URL}api/heroes?name=${term}`)
             .map(response => response.json() as Hero[]);
     }
 }
