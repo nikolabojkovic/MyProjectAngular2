@@ -1,23 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../models/hero';
-import { Headers , Http } from '@angular/http';
-import { API_URL } from '../env';
+import { API_ROUTES } from '../constants/api-routes.constants';
+import { HttpService } from './http.service';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class HeroService {
 
-    private heroesUrl = `${API_URL}api/heroes`;
-    private headers = new Headers();
 
 
-    constructor(private http: Http) {
-        this.headers.append('Accept', 'application/json');
-        this.headers.append('Content-Type', 'application/json');
-     }
+
+    constructor(private httpService: HttpService,) { }
 
     getHeroes(): Promise<Hero[]> {
-        return this.http.get(this.heroesUrl)
+        return this.httpService.get(API_ROUTES.heores)
                         .toPromise()
                         .then(response => response.json() as Hero[] )
                         .catch(this.handleError);
@@ -29,8 +25,8 @@ export class HeroService {
     }
 
     getHero(id: number): Promise<Hero> {
-        const url = `${this.heroesUrl}/${id}`;
-        return this.http.get(url)
+        const url = `${API_ROUTES.heores}/${id}`;
+        return this.httpService.get(url)
             .toPromise()
             .then(response => response.json() as Hero)
             .catch(this.handleError);
@@ -44,26 +40,25 @@ export class HeroService {
     }
 
     update(hero: Hero): Promise<Hero> {
-        const url = `${this.heroesUrl}/${hero.id}`;
-        return this.http
-            .put(url, JSON.stringify(hero), {headers: this.headers})
+        const url = `${API_ROUTES.heores}/${hero.id}`;
+        return this.httpService
+            .put(url, JSON.stringify(hero))
             .toPromise()
             .then(() => hero)
             .catch(this.handleError);
     }
 
     create(hero: Hero): Promise<Hero> {
-        return this.http.post(this.heroesUrl, 
-                              JSON.stringify(hero),
-                              {headers: this.headers})
+        return this.httpService.post(API_ROUTES.heores, 
+                              JSON.stringify(hero))
                     .toPromise()
                     .then(res => res.json() as Hero)
                     .catch(this.handleError);
     }
 
     delete(id: number): Promise<void> {
-        const url = `${this.heroesUrl}/${id}`;
-        return this.http.delete(url, {headers: this.headers})
+        const url = `${API_ROUTES.heores}/${id}`;
+        return this.httpService.delete(url)
          .toPromise()
          .then(() => null)
          .catch(this.handleError);
