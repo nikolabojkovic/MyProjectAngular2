@@ -1,0 +1,129 @@
+﻿/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    /*max-width: 280px; */
+}
+
+.input-limited-width
+{
+    max-width: 280px;
+}
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display:inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+.btn-bracketed::after {
+    display:inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+.mirror {
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.like{
+    color:dodgerblue;
+}
+
+.dislike{
+    color:black;
+}
+
+
+.test {
+    color : red;
+}
+
+.textToRight{
+    float:right;
+}
+
+/* error page */
+.error-404 {
+  margin: 0 auto;
+  text-align: center;
+  position:absolute;
+  top: 30%;
+  left: 35%;
+}
+.error-404 .error-code {
+  bottom: 60%;
+  color: #4686CC;
+  font-size: 96px;
+  line-height: 100px;
+  font-weight: bold;
+}
+.error-404 .error-desc {
+  font-size: 12px;
+  color: #647788;
+}
+.error-404 .m-b-10 {
+  margin-bottom: 10px!important;
+}
+.error-404 .m-b-20 {
+  margin-bottom: 20px!important;
+}
+.error-404 .m-t-20 {
+  margin-top: 20px!important;
+}
+
+/*erro page end */
+
+.log-off-btn > button {
+    color:white !important;
+    width: 100%;
+    text-align: left;
+    padding: 8px 15px;
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+.log-off-btn > button:hover {
+    transition: color 300ms, background-color 300ms;
+    background-color: #0066FF;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+
+  .input-limited-width{
+    max-width: 1000000px;
+  }
+  .log-off-btn > button {
+    color:white !important;
+    width: 100%;
+    text-align: left;
+    padding: 8px 15px;
+    margin: 0px;
+    border: none;
+    background-color: black;
+    color: #999999 !important;
+  }
+
+  .log-off-btn > button:hover {
+    transition: color 300ms, background-color 300ms;
+    color:white !important;
+    background-color: black;
+  }
+}
