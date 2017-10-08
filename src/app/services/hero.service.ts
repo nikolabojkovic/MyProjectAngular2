@@ -7,9 +7,6 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class HeroService {
 
-
-
-
     constructor(private httpService: HttpService,) { }
 
     getHeroes(): Promise<Hero[]> {

@@ -14,6 +14,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 // Services
 import { HeroService } from './services/hero.service';
@@ -25,7 +26,8 @@ import { HttpService } from './services/http.service';
     HeroDetailComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

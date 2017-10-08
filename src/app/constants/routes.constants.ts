@@ -1,5 +1,6 @@
 export const ROUTES = {
     heores: '/heroes',
     dashboard : '/dashboard',
-    home: '/home'
+    home: '/home',
+    portfolio: '/portfolio'
 };
