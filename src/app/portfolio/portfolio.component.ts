@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'portfolio',
     templateUrl: 'portfolio.component.html',
-    styleUrls: [ 
+    styleUrls: [
         'portfolio.component.css',
         '../shared/css/main.css',
         '../shared/css/responsive.css',

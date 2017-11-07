@@ -8,6 +8,7 @@ import { ROUTES } from './constants/routes.constants';
         <a routerLink="${ROUTES.dashboard}">Dashboard</a>
         <a routerLink="${ROUTES.heores}">Heroes</a>
         <a routerLink="${ROUTES.portfolio}">Porfolio</a>
+        <a routerLink="${ROUTES.cv}">Cv</a>
     </nav>
     <router-outlet></router-outlet>
     `,
