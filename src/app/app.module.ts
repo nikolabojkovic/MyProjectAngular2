@@ -34,9 +34,9 @@ import { HttpService } from './services/http.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     AppRoutingModule,
-    //InMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
     HttpService,
