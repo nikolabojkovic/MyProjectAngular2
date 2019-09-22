@@ -15,6 +15,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { CvComponent } from './cv/cv.component';
 
 // Services
 import { HeroService } from './services/hero.service';
@@ -27,14 +28,15 @@ import { HttpService } from './services/http.service';
     HeroesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     AppRoutingModule,
-    //InMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
     HttpService,

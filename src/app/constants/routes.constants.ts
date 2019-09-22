@@ -2,5 +2,6 @@ export const ROUTES = {
     heores: '/heroes',
     dashboard : '/dashboard',
     home: '/home',
-    portfolio: '/portfolio'
+    portfolio: '/portfolio',
+    cv: '/cv'
 };

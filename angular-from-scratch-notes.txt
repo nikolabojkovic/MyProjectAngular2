@@ -1,0 +1,3 @@
+// configure app to use less
+npm install less --save
+ng set defaults.styleExt less
